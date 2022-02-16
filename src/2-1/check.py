@@ -1,10 +1,31 @@
-import subprocess,os
+import subprocess, os, json
 from time import sleep
+from icecream import ic
 
 output_dir = os.environ.get('SM_OUTPUT_DIR')
+ic(output_dir)
 output_data_dir = os.environ.get('SM_OUTPUT_DATA_DIR')
+ic(output_data_dir)
 output_intermediate_dir = os.environ.get('SM_OUTPUT_INTERMEDIATE_DIR')
+ic(output_intermediate_dir)
 model_dir = os.environ.get('SM_MODEL_DIR')
+ic(model_dir)
+
+channels_list = json.loads(os.environ.get('SM_CHANNELS'))
+ic(channels_list)
+channels_dict = {}
+for channel in channels_list:
+    channels_dict[channel] = os.environ.get(f'SM_CHANNEL_{channel.upper()}')
+ic(channels_dict)
+
+# * SM_CHANNEL_{channel_name}
+hps = json.loads(os.environ.get('SM_HPS'))
+ic(hps)
+# * SM_HP_{hyperparameter_name}
+gpus = os.environ.get('SM_NUM_GPUS')
+ic(gpus)
+cpus = os.environ.get('SM_NUM_CPUS')
+ic(cpus)
 
 
 
