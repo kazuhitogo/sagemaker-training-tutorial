@@ -1,7 +1,6 @@
 import torch
 import torchvision
 import os
-import numpy as np
 
 # データロード
 train_dir = os.environ.get('SM_CHANNEL_TRAIN')
