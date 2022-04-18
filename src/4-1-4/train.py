@@ -30,4 +30,4 @@ model.fit(x_train,y_train,batch_size=hps['batch_size'],epochs=hps['epochs'],vali
 
 # モデルの保存
 model_dir = os.environ.get('SM_MODEL_DIR')
-model.save(os.path.join(model_dir,'./1'))
+model.save(os.path.join(model_dir,'1'))

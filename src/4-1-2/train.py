@@ -18,4 +18,4 @@ model.fit(x_train,y_train,batch_size=4,epochs=2,validation_data=(x_valid,y_valid
 
 # モデルの保存
 model_dir = os.environ.get('SM_MODEL_DIR')
-model.save(os.path.join(model_dir,'./1'))
+model.save(os.path.join(model_dir,'1'))
