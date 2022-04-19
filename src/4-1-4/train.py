@@ -1,4 +1,6 @@
 import tensorflow as tf
+from keras import backend as K
+K.set_image_data_format('channels_last')
 import os, json
 import numpy as np
 
